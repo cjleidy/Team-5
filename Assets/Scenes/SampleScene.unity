@@ -612,9 +612,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "The CEO of a new tech startup has contacted you, and is looking to set
-    up an office within your city/town. However, they currently lack the capital
-    to do so, and have asked for a government subsidy to help the company get on
-    its feet \n"
+    up an office within your city/town. However, they currently lack the capital to
+    do so, and have asked for a government subsidy to help the company get on its
+    feet \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1365,9 +1365,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New federal air/water quality standards have been implemented. A grace
-    period of 10 years has been put into effect, but you can begin work to meet these
-    new standards at any time.
+  m_text: New federal air/water quality standards have been implemented. A grace period
+    of 10 years has been put into effect, but you can begin work to meet these new
+    standards at any time.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2907,8 +2907,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The local libraries have collaborated to have a \u201CGo Green!\u201D
-    day, and are asking for a small donation to cover part of the event\u2019s operating
+  m_text: "The local libraries have collaborated to have a \u201CGo Green!\u201D day,
+    and are asking for a small donation to cover part of the event\u2019s operating
     costs.\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
