@@ -50,23 +50,34 @@ public class GameController : MonoBehaviour
     // minor = rnd.Next(16) + 5;
     // middle = rnd.Next(21) + 20;
     // major = rnd.Next(21) + 40;
-        if (eventCEO == true){
-            //set event object active
-            if (CEOoptionOne == true){
-                funding -= (PickRandomNumber(16) + 5);
-                investors += (PickRandomNumber(16) + 5);
-            }else if (CEOoptionTwo == true){
-                funding -= (PickRandomNumber(16) + 5);
-                investors += (PickRandomNumber(16) + 5);
-                hopefuls += (PickRandomNumber(16) + 5);
-                deniers -= (PickRandomNumber(16) + 5);
-            }
-
-        }
+    
     }
 
     private int PickRandomNumber(int maxInt){
         int randomNum = Random.Range(1, maxInt);
         return randomNum;
+    }
+
+    public void CEOOptionOne()
+    {
+        funding -= (PickRandomNumber(16) + 5);
+        investors += (PickRandomNumber(16) + 5);
+    }
+    public void CEOOptionTwo()
+    {
+        funding -= (PickRandomNumber(16) + 5);
+        investors += (PickRandomNumber(16) + 5);
+        hopefuls += (PickRandomNumber(16) + 5);
+        deniers -= (PickRandomNumber(16) + 5);
+    }
+    public void CEOOptionThree()
+    {
+        investors += (PickRandomNumber(21) + 20);
+        newOldMoney -= (PickRandomNumber(16) + 5);
+    }
+    public void CEOOptionFour()
+    {
+        newOldMoney += (PickRandomNumber(16) + 5);
+        investors -= (PickRandomNumber(16) + 5);
     }
 }
