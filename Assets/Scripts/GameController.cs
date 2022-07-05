@@ -80,4 +80,50 @@ public class GameController : MonoBehaviour
         newOldMoney += (PickRandomNumber(16) + 5);
         investors -= (PickRandomNumber(16) + 5);
     }
+    
+    public void AirOptionOne()
+    {
+        newOldMoney -= (PickRandomNumber(16) + 5);
+        deniers -= (PickRandomNumber(21) + 20);
+        hopefuls -= (PickRandomNumber(21) + 20);
+        funding -= (PickRandomNumber(21) + 20);
+    }
+    public void AirOptionTwo()
+    {
+        deniers -= (PickRandomNumber(16) + 5);
+        hopefuls += (PickRandomNumber(16) + 5);
+        funding -= (PickRandomNumber(16) + 5);
+    }
+    public void AirOptionThree()
+    {
+        deniers += (PickRandomNumber(16) + 5);
+        hopefuls -= (PickRandomNumber(21) + 20);
+    }
+
+    public void WasteOptionOne()
+    {
+        newOldMoney -= (PickRandomNumber(21) + 20);
+        hopefuls += (PickRandomNumber(21) + 20);
+        deniers -= (PickRandomNumber(21) + 20);
+        averageJoes += (PickRandomNumber(16) + 5);
+    }
+    public void WasteOptionTwo()
+    {
+        newOldMoney -= (PickRandomNumber(16) + 5);
+        deniers -= (PickRandomNumber(16) + 5);
+        hopefuls -= (PickRandomNumber(16) + 5);
+    }
+    public void WasteOptionThree()
+    {
+        newOldMoney += (PickRandomNumber(16) + 5);
+        deniers += (PickRandomNumber(16) + 5);
+        hopefuls -= (PickRandomNumber(16) + 5);
+        averageJoes -= (PickRandomNumber(16) + 5);
+    }
+    public void WasteOptionFour()
+    {
+        newOldMoney += (PickRandomNumber(21) + 20);
+        deniers += (PickRandomNumber(21) + 20);
+        hopefuls -= (PickRandomNumber(21) + 20);
+    }
 }
