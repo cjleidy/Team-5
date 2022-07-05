@@ -48,8 +48,8 @@ public class GameController : MonoBehaviour
     {
         
     // minor = rnd.Next(16) + 5;
-    // middle = rnd.Next(21) + 20;
-    // major = rnd.Next(21) + 40;
+    // middle = rnd.Next(16) + 20;
+    // major = rnd.Next(16) + 40;
     
     }
 
@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
     }
     public void CEOOptionThree()
     {
-        investors += (PickRandomNumber(21) + 20);
+        investors += (PickRandomNumber(16) + 20);
         newOldMoney -= (PickRandomNumber(16) + 5);
     }
     public void CEOOptionFour()
@@ -84,9 +84,9 @@ public class GameController : MonoBehaviour
     public void AirOptionOne()
     {
         newOldMoney -= (PickRandomNumber(16) + 5);
-        deniers -= (PickRandomNumber(21) + 20);
-        hopefuls -= (PickRandomNumber(21) + 20);
-        funding -= (PickRandomNumber(21) + 20);
+        deniers -= (PickRandomNumber(16) + 20);
+        hopefuls -= (PickRandomNumber(16) + 20);
+        funding -= (PickRandomNumber(16) + 20);
     }
     public void AirOptionTwo()
     {
@@ -97,14 +97,14 @@ public class GameController : MonoBehaviour
     public void AirOptionThree()
     {
         deniers += (PickRandomNumber(16) + 5);
-        hopefuls -= (PickRandomNumber(21) + 20);
+        hopefuls -= (PickRandomNumber(16) + 20);
     }
 
     public void WasteOptionOne()
     {
-        newOldMoney -= (PickRandomNumber(21) + 20);
-        hopefuls += (PickRandomNumber(21) + 20);
-        deniers -= (PickRandomNumber(21) + 20);
+        newOldMoney -= (PickRandomNumber(16) + 20);
+        hopefuls += (PickRandomNumber(16) + 20);
+        deniers -= (PickRandomNumber(16) + 20);
         averageJoes += (PickRandomNumber(16) + 5);
     }
     public void WasteOptionTwo()
@@ -122,8 +122,54 @@ public class GameController : MonoBehaviour
     }
     public void WasteOptionFour()
     {
-        newOldMoney += (PickRandomNumber(21) + 20);
-        deniers += (PickRandomNumber(21) + 20);
-        hopefuls -= (PickRandomNumber(21) + 20);
+        newOldMoney += (PickRandomNumber(16) + 20);
+        deniers += (PickRandomNumber(16) + 20);
+        hopefuls -= (PickRandomNumber(16) + 20);
+    }
+
+    public void LibraryOptionOne()
+    {
+        deniers -= (PickRandomNumber(16) + 20);
+        hopefuls += (PickRandomNumber(16) + 20);
+        averageJoes += (PickRandomNumber(16) + 5);
+        funding -= (PickRandomNumber(16) + 20);
+    }
+    public void LibraryOptionTwo()
+    {
+        deniers -= (PickRandomNumber(16) + 5);
+        hopefuls += (PickRandomNumber(16) + 5);
+        funding -= (PickRandomNumber(16) + 5);
+    }
+    public void LibraryOptionThree()
+    {
+        deniers += (PickRandomNumber(21) - 10);
+        averageJoes += (PickRandomNumber(21) - 10);
+        hopefuls += (PickRandomNumber(21) - 10);
+    }
+    public void LibraryOptionFour()
+    {
+        deniers += (PickRandomNumber(16) + 20);
+        hopefuls -= (PickRandomNumber(16) + 20);
+        averageJoes += (PickRandomNumber(16) + 5);
+    }
+
+    public void LandOptionOne()
+    {
+        averageJoes += (PickRandomNumber(16) + 5);
+    }
+    public void LandOptionTwo()
+    {
+        investors += (PickRandomNumber(16) + 5);
+        newOldMoney -= (PickRandomNumber(16) + 5);
+    }
+    public void LandOptionThree()
+    {
+        newOldMoney += (PickRandomNumber(16) + 5);
+        investors -= (PickRandomNumber(16) + 5);
+    }
+    public void LandOptionFour()
+    {
+        averageJoes += (PickRandomNumber(16) + 5);
+        hopefuls += (PickRandomNumber(16) + 5);
     }
 }
