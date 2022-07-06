@@ -11,18 +11,29 @@ public class GameController : MonoBehaviour
     public float hopefuls = 50;
     public float deniers = 50;
     public float averageApprovalRating = 0;
-    public float funding = 25; // 0-100
+    public float budget = 20000;
     public Text AAR;
-    public Text Funding;
+    public Text Budget;
     public Text InvestorsR;
     public Text NewOldMoneyR;
     public Text AverageJoesR;
     public Text HopefulsR;
     public Text DeniersR;
+    public GameObject CEO;
+    public GameObject Air;
+    public GameObject Waste;
+    public GameObject Library;
+    public GameObject Land;
+    public GameObject GameOver;
+    public GameObject GameWin;
 
 
     //events
     public int choiceMade = 0;
+    public int round = 1;
+    public int dangerCount = 0;
+    public bool dangerZone = false;
+    public bool gameOver = false;
 
 
 //a choice is prompted to the user that they have to decide whether they go along with the task or do something else. this will change the ratings from each group of people negatively or positively. 
@@ -78,7 +89,49 @@ public class GameController : MonoBehaviour
         {
             averageApprovalRating = (investors + newOldMoney + averageJoes + hopefuls + deniers)/5;
             AAR.text = "Overall Approval Rating: " + averageApprovalRating;
-            Funding.text = "Funding: $" + funding;
+            Budget.text = "Budget: $" + budget;
+            dangerCount = 0;
+            if (investors < 21)
+            {
+                dangerCount++;
+            }
+            if (newOldMoney < 21)
+            {
+                dangerCount++;
+            }
+            if (averageJoes < 21)
+            {
+                dangerCount++;
+            }
+            if (hopefuls < 21)
+            {
+                dangerCount++;
+            }
+            if (deniers < 21)
+            {
+                dangerCount++;
+            }
+            if (dangerCount == 2)
+            {
+                dangerZone = true;
+            }
+            if (dangerZone == true && round < 6)
+            {
+                CEO.SetActive(false);
+                Air.SetActive(false);
+                Waste.SetActive(false);
+                Library.SetActive(false);
+                Land.SetActive(false);
+                GameOver.SetActive(true);
+            }
+            if (round == 6)
+            {
+                GameWin.SetActive(true);
+            }
+            if ( dangerCount >= 3)
+            {
+                gameOver = true;
+            }
             choiceMade = 0;
         }
         InvestorsR.text = "Investors: " + investors;
@@ -86,6 +139,8 @@ public class GameController : MonoBehaviour
         AverageJoesR.text = "Average Joes: " + averageJoes;
         HopefulsR.text = "Hopefuls: " + hopefuls;
         DeniersR.text = "Deniers: " + deniers;
+
+        
         
     }
 
@@ -96,33 +151,37 @@ public class GameController : MonoBehaviour
 
     public void CEOOptionOne()
     {
-        funding -= (PickRandomNumber(16) + 5);
+        budget -= (PickRandomNumber(16000) + 5000);
         investors += (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void CEOOptionTwo()
     {
-        funding -= (PickRandomNumber(16) + 5);
+        budget -= (PickRandomNumber(16000) + 5000);
         investors += (PickRandomNumber(16) + 5);
         hopefuls += (PickRandomNumber(16) + 5);
         deniers -= (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void CEOOptionThree()
     {
         investors += (PickRandomNumber(16) + 20);
         newOldMoney -= (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void CEOOptionFour()
     {
         newOldMoney += (PickRandomNumber(16) + 5);
         investors -= (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     
     public void AirOptionOne()
@@ -130,24 +189,27 @@ public class GameController : MonoBehaviour
         newOldMoney -= (PickRandomNumber(16) + 5);
         deniers -= (PickRandomNumber(16) + 20);
         hopefuls -= (PickRandomNumber(16) + 20);
-        funding -= (PickRandomNumber(16) + 20);
-        funding += 5;
+        budget -= (PickRandomNumber(16000) + 5000);
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void AirOptionTwo()
     {
         deniers -= (PickRandomNumber(16) + 5);
         hopefuls += (PickRandomNumber(16) + 5);
-        funding -= (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget -= (PickRandomNumber(16000) + 5000);
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void AirOptionThree()
     {
         deniers += (PickRandomNumber(16) + 5);
         hopefuls -= (PickRandomNumber(16) + 20);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
 
     public void WasteOptionOne()
@@ -156,16 +218,18 @@ public class GameController : MonoBehaviour
         hopefuls += (PickRandomNumber(16) + 20);
         deniers -= (PickRandomNumber(16) + 20);
         averageJoes += (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void WasteOptionTwo()
     {
         newOldMoney -= (PickRandomNumber(16) + 5);
         deniers -= (PickRandomNumber(16) + 5);
         hopefuls -= (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void WasteOptionThree()
     {
@@ -173,16 +237,18 @@ public class GameController : MonoBehaviour
         deniers += (PickRandomNumber(16) + 5);
         hopefuls -= (PickRandomNumber(16) + 5);
         averageJoes -= (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void WasteOptionFour()
     {
         newOldMoney += (PickRandomNumber(16) + 20);
         deniers += (PickRandomNumber(16) + 20);
         hopefuls -= (PickRandomNumber(16) + 20);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
 
     public void LibraryOptionOne()
@@ -190,56 +256,64 @@ public class GameController : MonoBehaviour
         deniers -= (PickRandomNumber(16) + 20);
         hopefuls += (PickRandomNumber(16) + 20);
         averageJoes += (PickRandomNumber(16) + 5);
-        funding -= (PickRandomNumber(16) + 20);
-        funding += 5;
+        budget -= (PickRandomNumber(16000) + 5000);
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void LibraryOptionTwo()
     {
         deniers -= (PickRandomNumber(16) + 5);
         hopefuls += (PickRandomNumber(16) + 5);
-        funding -= (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget -= (PickRandomNumber(16000) + 5000);
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void LibraryOptionThree()
     {
         deniers += (PickRandomNumber(21) - 10);
         averageJoes += (PickRandomNumber(21) - 10);
         hopefuls += (PickRandomNumber(21) - 10);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
     public void LibraryOptionFour()
     {
         deniers += (PickRandomNumber(16) + 20);
         hopefuls -= (PickRandomNumber(16) + 20);
         averageJoes += (PickRandomNumber(16) + 5);
-        funding += 5;
+        budget += 5000;
         choiceMade = 1;
+        round++;
     }
 
     public void LandOptionOne()
     {
         averageJoes += (PickRandomNumber(16) + 5);
         choiceMade = 1;
+        round++;
     }
     public void LandOptionTwo()
     {
         investors += (PickRandomNumber(16) + 5);
         newOldMoney -= (PickRandomNumber(16) + 5);
         choiceMade = 1;
+        round++;
     }
     public void LandOptionThree()
     {
         newOldMoney += (PickRandomNumber(16) + 5);
         investors -= (PickRandomNumber(16) + 5);
         choiceMade = 1;
+        round++;
     }
     public void LandOptionFour()
     {
         averageJoes += (PickRandomNumber(16) + 5);
         hopefuls += (PickRandomNumber(16) + 5);
         choiceMade = 1;
+        round++;
     }
 }
