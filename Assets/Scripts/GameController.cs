@@ -14,6 +14,11 @@ public class GameController : MonoBehaviour
     public float funding = 25; // 0-100
     public Text AAR;
     public Text Funding;
+    public Text InvestorsR;
+    public Text NewOldMoneyR;
+    public Text AverageJoesR;
+    public Text HopefulsR;
+    public Text DeniersR;
 
 
     //events
@@ -72,10 +77,15 @@ public class GameController : MonoBehaviour
         if (choiceMade > 0)
         {
             averageApprovalRating = (investors + newOldMoney + averageJoes + hopefuls + deniers)/5;
-            AAR.text = "Overall Approval Rating: " + averageApprovalRating + ".";
+            AAR.text = "Overall Approval Rating: " + averageApprovalRating;
             Funding.text = "Funding: $" + funding;
             choiceMade = 0;
         }
+        InvestorsR.text = "Investors: " + investors;
+        NewOldMoneyR.text = "New Old Money: " + newOldMoney;
+        AverageJoesR.text = "Average Joes: " + averageJoes;
+        HopefulsR.text = "Hopefuls: " + hopefuls;
+        DeniersR.text = "Deniers: " + deniers;
         
     }
 
