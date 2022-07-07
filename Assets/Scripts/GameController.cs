@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public float deniers = 50;
     public float averageApprovalRating = 0;
     public float budget = 20000;
+    public float budgetToWin = 0;
     public Text AAR;
     public Text Budget;
     public Text InvestorsR;
@@ -26,6 +27,7 @@ public class GameController : MonoBehaviour
     public GameObject Land;
     public GameObject GameOver;
     public GameObject GameWin;
+    public GameObject GameNull;
 
 
     //events
@@ -126,10 +128,19 @@ public class GameController : MonoBehaviour
             }
             if (round == 6)
             {
-                GameWin.SetActive(true);
+                if (budget >= budgetToWin){
+                    GameWin.SetActive(true);
+                } else {
+                GameNull.SetActive(true);
+                }
             }
             if ( dangerCount >= 3)
             {
+                CEO.SetActive(false);
+                Air.SetActive(false);
+                Waste.SetActive(false);
+                Library.SetActive(false);
+                Land.SetActive(false);
                 gameOver = true;
             }
             choiceMade = 0;
@@ -148,6 +159,48 @@ public class GameController : MonoBehaviour
         int randomNum = Random.Range(1, maxInt);
         return randomNum;
     }
+
+    public void CIProject()
+    {
+        budgetToWin = 5000;
+    }
+    public void WRIProject()
+    {
+        budgetToWin = 13000;
+    }
+    public void SFSProject()
+    {
+        budgetToWin = 9000;
+    }
+    public void IRSProject()
+    {
+        budgetToWin = 8000;
+    }
+    public void PPProject()
+    {
+        budgetToWin = 22000;
+    }
+    public void PRIProject()
+    {
+        budgetToWin = 15000;
+    }
+    public void SFProject()
+    {
+        budgetToWin = 16000;
+    }
+    public void WFProject()
+    {
+        budgetToWin = 12000;
+    }
+    public void GSProject()
+    {
+        budgetToWin = 17000;
+    }
+    public void GRIProject()
+    {
+        budgetToWin = 25000;
+    }
+    
 
     public void CEOOptionOne()
     {
