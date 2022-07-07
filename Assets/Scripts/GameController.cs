@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class GameController : MonoBehaviour
     public GameObject GameOver;
     public GameObject GameWin;
     public GameObject GameNull;
+    public GameObject MainMenu;
 
 
     //events
@@ -125,13 +127,17 @@ public class GameController : MonoBehaviour
                 Library.SetActive(false);
                 Land.SetActive(false);
                 GameOver.SetActive(true);
+                MainMenu.SetActive(true);
+
             }
             if (round == 6)
             {
                 if (budget >= budgetToWin){
                     GameWin.SetActive(true);
+                    MainMenu.SetActive(true);
                 } else {
                 GameNull.SetActive(true);
+                MainMenu.SetActive(true);
                 }
             }
             if ( dangerCount >= 3)
@@ -142,6 +148,7 @@ public class GameController : MonoBehaviour
                 Library.SetActive(false);
                 Land.SetActive(false);
                 gameOver = true;
+                MainMenu.SetActive(true);
             }
             choiceMade = 0;
         }
@@ -368,5 +375,10 @@ public class GameController : MonoBehaviour
         hopefuls += (PickRandomNumber(16) + 5);
         choiceMade = 1;
         round++;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }
