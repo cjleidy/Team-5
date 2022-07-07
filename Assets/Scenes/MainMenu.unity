@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_text: 'Pick a Sustainable Project and make choices for the city
 
     Make sure
-    to have a good Approval Rating from each group and a high enough Budget for yout
+    to have a good Approval Rating from each group and a high enough Budget for your
     Project.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
